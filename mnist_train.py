@@ -1,3 +1,4 @@
+
 import torch
 from torch import nn
 from  torch.nn import  functional as F
@@ -13,3 +14,9 @@ train_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('mnist_dat
 test_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('mnist_data',train=True,download=True,transform=torchvision.transforms.Compose(
     [ torchvision.transforms.ToTensor(),torchvision.transforms.Normalize((0.1307,),(0.3801,))]
     )),batch_size=batch_size,shuffle=True)
+
+x,y=next(iter(train_loader))
+
+print(x.shape.y.shape,x.min(),y.min())
+
+plot_image(x,y,'image sample')
